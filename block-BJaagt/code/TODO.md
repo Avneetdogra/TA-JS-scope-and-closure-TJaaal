@@ -2,89 +2,56 @@ Go through the code below and write down the process of making decision about lo
 
 Example:
 
-```js
 function hello() {
   var username = 'Arya';
 }
-console.log(useranme); // output
-```
+console.log(useranme); // username is not defind
+In above code we are looking for the variable named usename. There is no variable named username in the global scope. The variable is inside the function named hello and we can't access the variable defined inside a function from outside.
 
-In above code we are looking for the variable named `usename`. There is no variable named `username` in the global scope. The variable is inside the function named `hello` and we can't access the variable defined inside a function from outside.
+The above code will throw an error Reference Error username is not defined.
 
-The above code will throw an error `Reference Error username is not defined`.
-
-2. Go through the code below and write down the process of making decision about looking for the variable. Also write the output of the code below.
-
-```js
+Go through the code below and write down the process of making decision about looking for the variable. Also write the output of the code below.
 {
+  {
   const username = 'Arya';
 }
-console.log(useranme); // output
-```
-
-3. Go through the code below and write down the process of making decision about looking for the variable. Also write the output of the code below.
-
-```js
+console.log(useranme); // the above code will inside throw an error `Reference Error username is not defined`
+Go through the code below and write down the process of making decision about looking for the variable. Also write the output of the code below.
 if (true) {
   let username = 'Arya';
 }
-console.log(useranme); // output
-```
-
-4. Go through the code below and write down the process of making decision about looking for the variable. Also write the output of the code below.
-
-```js
+console.log(useranme); // Reference Error username is not defined
+Go through the code below and write down the process of making decision about looking for the variable. Also write the output of the code below.
 if (true) {
-  var username = 'Arya';
+  let username = 'Arya';
 }
-console.log(useranme); // output
-```
-
-5. Go through the code below and write down the process of making decision about looking for the variable. Also write the output of the code below.
-
-```js
+console.log(useranme); // Reference Error username is not defined
+Go through the code below and write down the process of making decision about looking for the variable. Also write the output of the code below.
 let username = 'John';
 if (true) {
   var username = 'Arya';
 }
-console.log(useranme); // output
-```
-
-6. Go through the code below and write down the process of making decision about looking for the variable. Also write the output of the code below.
-
-```js
+console.log(useranme); // 'username' has already been declared
+Go through the code below and write down the process of making decision about looking for the variable. Also write the output of the code below.
 let username = 'John';
 if (true) {
   let username = 'Arya';
 }
-console.log(useranme); // output
-```
-
-7. Go through the code below and write down the process of making decision about looking for the variable. Also write the output of the code below.
-
-```js
+console.log(username); // john
+Go through the code below and write down the process of making decision about looking for the variable. Also write the output of the code below.
 let username = 'John';
 function sayHello() {
   let username = 'Arya';
 }
 sayHello();
-console.log(useranme); // output
-```
-
-8. Go through the code below and write down the process of making decision about looking for the variable. Also write the output of the code below.
-
-```js
+console.log(username); // john
+Go through the code below and write down the process of making decision about looking for the variable. Also write the output of the code below.
 for (var i = 0; i < 10; i++) {
-  console.log(i, 'First'); // output
+  console.log(i, 'First'); // 1 to 9 is "first"
 }
-console.log(i, 'Second'); // output
-```
-
-9. Go through the code below and write down the process of making decision about looking for the variable. Also write the output of the code below.
-
-```js
+console.log(i, 'Second'); // 10 is second
+Go through the code below and write down the process of making decision about looking for the variable. Also write the output of the code below.
 for (let i = 0; i < 10; i++) {
-  console.log(i, 'First'); // output
+  console.log(i, 'First'); // first
 }
-console.log(i, 'Second'); // output
-```
+console.log(i, 'Second'); // ReferenceError: i is not defined
