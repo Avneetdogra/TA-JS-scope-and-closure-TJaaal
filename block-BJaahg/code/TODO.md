@@ -1,24 +1,17 @@
-## Understanding Scope and the difference between var, let and const
-
+Understanding Scope and the difference between var, let and const
 Watch this video before doing the exercise: https://www.youtube.com/watch?v=XgSjoHgy3Rk
 
-1. Guess the output:
-
-```js
+Guess the output:
 let firstName = 'Arya';
 const lastName = 'Stark';
 var knownAs = 'no one';
 
 console.log(
-  window.firstName,
-  window.lastName,
-  window.knownAs
+  window.firstName, //undefined
+  window.lastName,//undefined
+  window.knownAs // 'no one'
 );
-```
-
-2. Guess the output:
-
-```js
+Guess the output:
 let firstName = 'Arya';
 const lastName = 'Stark';
 var knownAs = 'no one';
@@ -27,67 +20,43 @@ function fullName(a, b) {
   return a + b;
 }
 
-console.log(window.fullName(firstName, lastName));
-```
-
-3. Make a Execution Context Diagram for the following JS and write the output.
-
-```js
+console.log(window.fullName(firstName, lastName));// 'Arya Stark'
+Make a Execution Context Diagram for the following JS and write the output.
 fucntion addOne(num){
   return num + 1;
 }
 var one = addOne(0);
 var two = addOne(1);
 console.log(one, two);
-```
-
-4. Make a Execution Context Diagram for the following JS and write the output.
-
-```js
+Make a Execution Context Diagram for the following JS and write the output.
 var one = addOne(0);
 fucntion addOne(num){
   return num + 1;
 }
 var two = addOne(1);
 console.log(one, two);
-```
-
-5. Make a Execution Context Diagram for the following JS and write the output.
-
-```js
+Make a Execution Context Diagram for the following JS and write the output.
 console.log(addOne(0));
 fucntion addOne(num){
   return num + 1;
 }
 var two = addOne(1);
 console.log(two);
-```
-
-6. Make a Execution Context Diagram for the following JS and write the output.
-
-```js
+Make a Execution Context Diagram for the following JS and write the output.
 var one = addOne(0);
 const addOne = (num) => {
   return num + 1;
 };
 var two = addOne(1);
 console.log(two);
-```
-
-7. Make a Execution Context Diagram for the following JS and write the output.
-
-```js
+Make a Execution Context Diagram for the following JS and write the output.
 console.log(addOne(0));
 const addOne = (num) => {
   return num + 1;
 };
 var two = addOne(1);
 console.log(two);
-```
-
-8. What will be the output of the following
-
-```js
+What will be the output of the following
 function isAwesome() {
   var awesome;
   if (false) {
@@ -95,12 +64,8 @@ function isAwesome() {
   }
   console.log(awesome);
 }
-isAwesome();
-```
-
-9. What will be the output of the following
-
-```js
+isAwesome();//undefined
+What will be the output of the following
 function isAwesome() {
   let awesome;
   if (true) {
@@ -108,12 +73,8 @@ function isAwesome() {
   }
   console.log(awesome);
 }
-isAwesome();
-```
-
-10. What will be the output of the following
-
-```js
+isAwesome();//True
+What will be the output of the following
 function isAwesome() {
   let awesome;
   if (false) {
@@ -121,12 +82,8 @@ function isAwesome() {
   }
   console.log(awesome);
 }
-isAwesome();
-```
-
-11. What will be the output of the following
-
-```js
+isAwesome();//undefined
+What will be the output of the following
 let firstName = 'Arya';
 const lastName = 'Stark';
 var knownAs = 'no one';
@@ -135,59 +92,34 @@ function fullName(a, b) {
   return a + b;
 }
 const name = fullName(firstName, lastName);
-console.log(name);
-```
-
-12. Guess the output of the code below with a reason.
-
-```js
+console.log(name);//'Arya Stark'
+Guess the output of the code below with a reason.
 function sayHello() {
   let name = 'Arya Stark';
 }
 sayHello();
 
-console.log(name);
-```
-
-13. Guess the output of the code below with a reason.
-
-```js
+console.log(name);//'Arya Stark'
+Guess the output of the code below with a reason.
 if (true) {
   var name = 'Arya Stark';
 }
-console.log(name);
-```
-
-14. Guess the output of the code below with a reason.
-
-```js
+console.log(name);// undefined
+Guess the output of the code below with a reason.
 if (true) {
   let name = 'Arya Stark';
 }
-console.log(name);
-```
-
-15. Guess the output of the code below with a reason.
-
-```js
+console.log(name);//Arya Stark
+Guess the output of the code below with a reason.
 for (var i = 0; i < 20; i++) {
-  //
+  
 }
-console.log(i);
-```
-
-16. Guess the output of the code below with a reason.
-
-```js
+console.log(i); //20
+Guess the output of the code below with a reason.
 for (let i = 0; i < 20; i++) {
-  //
-}
+  /
 console.log(i);
-```
-
-17. Guess the output and the reason behind that.
-
-```js
+Guess the output and the reason behind that.
 function sample() {
   if (true) {
     var username = 'John Snow';
@@ -195,11 +127,7 @@ function sample() {
   console.log(username);
 }
 sample();
-```
-
-18. Guess the output and the reason behind that.
-
-```js
+Guess the output and the reason behind that.
 function sample() {
   if (true) {
     let username = 'John Snow';
@@ -207,11 +135,7 @@ function sample() {
   console.log(username);
 }
 sample();
-```
-
-19. Guess the output and the reason behind that.
-
-```js
+Guess the output and the reason behind that.
 function sample() {
   var username = 'Arya Stark';
   if (true) {
@@ -221,11 +145,7 @@ function sample() {
   console.log(username, 'second');
 }
 sample();
-```
-
-20. Guess the output and the reason behind that.
-
-```js
+Guess the output and the reason behind that.
 function sample() {
   let username = 'Arya Stark';
   if (true) {
@@ -235,11 +155,7 @@ function sample() {
   console.log(username, 'second');
 }
 sample();
-```
-
-21. Guess the output and the reason behind that.
-
-```js
+Guess the output and the reason behind that.
 function sample(...args) {
   for (let i = 0; i < args.length; i++) {
     let message = `Hello I am ${args[i]}`;
@@ -248,11 +164,7 @@ function sample(...args) {
 }
 
 sample('First', 'Second', 'Third');
-```
-
-22. Guess the output and the reason behind that.
-
-```js
+Guess the output and the reason behind that.
 function sample(...args) {
   for (let i = 0; i < args.length; i++) {
     const message = `Hello I am ${args[i]}`;
@@ -261,11 +173,7 @@ function sample(...args) {
 }
 
 sample('First', 'Second', 'Third');
-```
-
-23. Guess the output and the reason behind that.
-
-```js
+Guess the output and the reason behind that.
 if (true) {
   const myFunc = function () {
     console.log(username, 'Second');
@@ -274,11 +182,7 @@ if (true) {
   let username = 'Hello World!';
   myFunc();
 }
-```
-
-24. Guess the output and the reason behind that.
-
-```js
+Guess the output and the reason behind that.
 function outer() {
   let movie = 'Mad Max: Fury Road';
   function inner() {
@@ -290,11 +194,7 @@ function outer() {
 }
 
 outer();
-```
-
-25. Guess the output and the reason behind that.
-
-```js
+Guess the output and the reason behind that.
 function outer() {
   let movie = 'Mad Max: Fury Road';
   function inner() {
@@ -307,11 +207,7 @@ function outer() {
 }
 
 outer();
-```
-
-26. Guess the output and the reason behind that.
-
-```js
+Guess the output and the reason behind that.
 function outer() {
   let movie = 'Mad Max: Fury Road';
   function inner() {
@@ -327,11 +223,7 @@ function outer() {
   inner();
 }
 outer();
-```
-
-30. Using reduce find the final value when the initial value passed is `100`. You have to pass the output of one function into the input of next function in the array `allFunctions` starts with `addOne` ends with `half`.
-
-```js
+Using reduce find the final value when the initial value passed is 100. You have to pass the output of one function into the input of next function in the array allFunctions starts with addOne ends with half.
 const addOne = (num) => {
   return num + 1;
 };
@@ -355,4 +247,3 @@ let allFunctions = [
 ];
 
 // Answer is: 447
-```
