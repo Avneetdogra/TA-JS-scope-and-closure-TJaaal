@@ -1,6 +1,5 @@
 Create the execution context diagram for following code. What will be the output in each line of code
 
-```js
 function getCounter() {
   let privateCounter = 0;
   function changeBy(val) {
@@ -27,11 +26,9 @@ counter.increment(); // output
 counter.value(); // output
 counter.decrement(); // output
 counter.value(); // output
-```
 
-2. Create the execution context diagram and write the output.
 
-```js
+Create the execution context diagram and write the output.
 function makeCounter() {
   let privateCounter = 0;
   function changeBy(val) {
@@ -64,4 +61,3 @@ console.log(counter1.value()); // OUTPUT
 counter1.decrement();
 console.log(counter1.value()); // OUTPUT
 console.log(counter2.value()); // OUTPUT
-```
