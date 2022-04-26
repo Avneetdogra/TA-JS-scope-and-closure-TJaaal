@@ -1,6 +1,21 @@
-1. Create a function by your choice that accepts a callback function.
+Create a function by your choice that accepts a callback function.
+function multiple (cd){
+  return cd(21)
+}
+multiple(function inner(num){
+  return num+1
+})
+}
 
 2. Create a function by you choice that returns a function reference.
+
+function outer (){
+  function inner(num){
+    return num+1
+  }
+  return inner
+}
+outer();
 
 3. Create a higher order function called `map` that takes two inputs:
    - An array of numbers/string/boolean etc
@@ -9,7 +24,15 @@
 Have `map` return a new array filled with values that are the result of the 'callback' function on each element of the input array.
 
 ```js
-// Your code goes here
+function map(str,cb){
+  let arr = []
+  for (let i=0; i<str.length;i++){
+ arr.push(cb( str[i]))
+  }
+
+return arr
+}
+
 
 // Test Your Code
 function multiplyByTwo(n) {
@@ -18,12 +41,12 @@ function multiplyByTwo(n) {
 map([1, 2, 3, 4, 5], multiplyByTwo); //-> [2,4,6,8,10]
 multiplyByTwo(1); //-> 2
 multiplyByTwo(2); //-> 4
-```
-
-4. Create a higher-order function called `forEach` taht takes an array and a callback, and runs the callback on each element of the array. `forEach` does not return anything.
-
-```js
-// Your code goes here
+Create a higher-order function called forEach taht takes an array and a callback, and runs the callback on each element of the array. forEach does not return anything.
+function forEach(array ,cb){
+  for (let i=0; i<array.length;i++){
+      cb( array[i])
+  };
+}
 
 // Test Your Code
 let alphabet = '';
@@ -32,13 +55,17 @@ forEach(letters, function (char) {
   alphabet += char;
 });
 console.log(alphabet); //prints 'abcd'
-```
+Create higher-order function called filter takes an array and a callback, and runs the callback on each element of the array if the return value of callback is truthy store in new array return the new array.
+function filter (array ,cb){
+  let arr = []
+  for(let i=0; i<array.length; i++){
+    if(cb(array[i])){
+      arr.push(array[i])
+    }
+  }
+      return arr
 
-5. Create higher-order function called `filter` takes an array and a callback, and runs the callback on each element of the array if the return value of callback is `truthy` store in new array return the new array.
-
-```js
-// Test Your Code
-
+}
 var numbers = [1, 3, 5, 4, 7, 89, 234, 20];
 let even = filter(numbers, function (n) {
   return n % 2 === 0;
@@ -48,4 +75,3 @@ let odd = filter(numbers, function (n) {
   return n % 2 !== 0;
 });
 console.log(odd); // [1,3,5,7,89]
-```
